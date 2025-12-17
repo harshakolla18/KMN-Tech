@@ -1,0 +1,53 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #0a1e3a 0%, #1a3a52 100%);
+  color: #fff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.app-container {
+  display: flex;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+  margin-left: 0;
+  transition: margin-left 0.3s ease;
+}
+
+/* Glassy Blue Theme */
+:root {
+  --primary-blue: #0F1E2E;   /* Hero / header */
+  --accent-blue: #3A7CA5;    /* Buttons / highlights */
+  --secondary-blue: #5F8BA7; /* Cards / hover */
+  --bg-white: #FFFFFF;       /* Backgrounds / text contrast */
+  --border-gray: #E5E9F0;    /* Dividers / borders */
+}
+
+/* Example usage */
+body {
+  background-color: var(--bg-white);
+  color: var(--primary-blue);
+}
+
+button {
+  background-color: var(--accent-blue);
+  border: 1px solid var(--border-gray);
+  color: var(--bg-white);
+}
+
+button:hover {
+  background-color: var(--secondary-blue);
+}
+
+@media (max-width: 768px) {
+  .main-content {
+    margin-left: 0;
+  }
+}

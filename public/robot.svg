@@ -1,0 +1,63 @@
+<svg viewBox="0 0 200 300" xmlns="http://www.w3.org/2000/svg">
+  <!-- Light blue background circle -->
+  <circle cx="100" cy="120" r="85" fill="#B3D9F0" opacity="0.9"/>
+  
+  <!-- Head -->
+  <rect x="50" y="40" width="100" height="95" rx="20" fill="#D4E8F7"/>
+  
+  <!-- Top antenna -->
+  <circle cx="100" cy="30" r="8" fill="#1B3A5F"/>
+  <line x1="100" y1="30" x2="100" y2="10" stroke="#1B3A5F" stroke-width="4" stroke-linecap="round"/>
+  
+  <!-- Left ear -->
+  <ellipse cx="40" cy="85" rx="15" ry="25" fill="#1B3A5F"/>
+  
+  <!-- Right ear -->
+  <ellipse cx="160" cy="85" rx="15" ry="25" fill="#1B3A5F"/>
+  
+  <!-- Screen/Face -->
+  <rect x="55" y="50" width="90" height="75" rx="8" fill="#0F1E38" stroke="#1B3A5F" stroke-width="2"/>
+  
+  <!-- Left eye -->
+  <rect x="65" y="65" width="12" height="25" rx="6" fill="#00D4FF"/>
+  <rect x="65" y="65" width="12" height="25" rx="6" fill="#00D4FF" filter="url(#glow)"/>
+  
+  <!-- Right eye -->
+  <rect x="123" y="65" width="12" height="25" rx="6" fill="#00D4FF"/>
+  <rect x="123" y="65" width="12" height="25" rx="6" fill="#00D4FF" filter="url(#glow)"/>
+  
+  <!-- Smile -->
+  <path d="M 75 100 Q 100 115 125 100" stroke="#00D4FF" stroke-width="2" fill="none" stroke-linecap="round"/>
+  
+  <!-- Body -->
+  <rect x="60" y="140" width="80" height="70" rx="15" fill="#D4E8F7"/>
+  
+  <!-- Body divider -->
+  <line x1="60" y1="175" x2="140" y2="175" stroke="#B3D9F0" stroke-width="2"/>
+  
+  <!-- Left arm -->
+  <g>
+    <rect x="30" y="160" width="35" height="18" rx="9" fill="#D4E8F7"/>
+    <circle cx="25" cy="169" r="9" fill="#B3D9F0"/>
+  </g>
+  
+  <!-- Right arm waving -->
+  <g>
+    <rect x="140" y="145" width="35" height="18" rx="9" fill="#D4E8F7" transform="rotate(-30 157.5 154)"/>
+    <circle cx="170" cy="135" r="9" fill="#B3D9F0"/>
+    <!-- Hand -->
+    <rect x="165" y="120" width="12" height="25" rx="6" fill="#D4E8F7"/>
+    <path d="M 165 120 L 160 105 M 170 120 L 172 102 M 177 120 L 182 106" stroke="#1B3A5F" stroke-width="2" stroke-linecap="round"/>
+  </g>
+  
+  <!-- Glow filter -->
+  <defs>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+</svg>

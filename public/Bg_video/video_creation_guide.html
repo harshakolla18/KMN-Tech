@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Generate Sample MP4</title>
+</head>
+
+<body>
+    <h1>Sample MP4 Video Generator</h1>
+    <p>Use this guide to create a sample background video:</p>
+
+    <h2>Option 1: Using FFmpeg (Recommended)</h2>
+    <pre>
+# Create a simple gradient video (10 seconds, 1920x1080)
+ffmpeg -f lavfi -i color=c=0d2a4d:s=1920x1080:d=10 -f lavfi -i sine=f=1000:d=10 -pix_fmt yuv420p background.mp4
+
+# Or with a moving gradient
+ffmpeg -f lavfi -i color=c=0a1e3a:s=1920x1080:d=10 -vf "scale=1920:1080" -c:v libx264 -crf 23 background.mp4
+    </pre>
+
+    <h2>Option 2: Download a free video</h2>
+    <p>Download a video from: Pexels.com, Pixabay.com, or Coverr.co</p>
+    <p>Then convert it:</p>
+    <pre>
+ffmpeg -i your_video.mov -c:v libx264 -crf 23 -preset fast background.mp4
+    </pre>
+
+    <h2>Option 3: Using Python</h2>
+    <pre>
+# Create a simple gradient video using OpenCV
+import cv2
+import numpy as np
+
+width, height = 1920, 1080
+fps = 30
+duration = 10  # seconds
+frames = fps * duration
+
+fourcc = cv2.VideoWriter_fourcc(*'mp4v')
+out = cv2.VideoWriter('background.mp4', fourcc, fps, (width, height))
+
+for frame_num in range(frames):
+    # Create gradient frame
+    frame = np.zeros((height, width, 3), dtype=np.uint8)
+    for i in range(height):
+        ratio = i / height
+        frame[i, :] = [int(13 + (42-13)*ratio), int(42 + (165-42)*ratio), int(161 + (245-161)*ratio)]
+    out.write(frame)
+
+out.release()
+print("Video created: background.mp4")
+    </pre>
+
+    <h2>Then place the file here:</h2>
+    <p>/public/Bg_video/background.mp4</p>
+</body>
+
+</html>
