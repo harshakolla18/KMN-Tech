@@ -84,7 +84,6 @@ function HomePage() {
           animate={{ scale: 1, opacity: 1 }}
           transition={{ delay: 0.2, duration: 0.6 }}
         >
-          <h1 className="hero-title">KMN IT & Consulting</h1>
           <p
             className="hero-slogan focus-in-contract"
             style={{ animationDelay: '0s', animationDuration: '5s' }}

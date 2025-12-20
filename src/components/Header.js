@@ -19,6 +19,7 @@ function Header() {
             whileTap={{ scale: 0.95 }}
           >
             <div className="header-logo">KMN</div>
+            <div className="header-logo-subtitle"><br></br>IT & Consulting</div>
           </motion.div>
         </Link>
         <nav className="header-nav">
