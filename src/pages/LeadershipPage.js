@@ -32,7 +32,7 @@ function LeadershipPage() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
       >
-        <h1>Our Leadership Team</h1>
+        <h1>Our Team</h1>
         <p>Meet the visionaries driving innovation at Neos Tech</p>
       </motion.div>
 

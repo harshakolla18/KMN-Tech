@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Zap, Globe, Briefcase, Users } from 'lucide-react';
-import ChatBot from '../components/ChatBot';
 import backgroundImage from '../images/2.png';
 import './HomePage.css';
 
@@ -295,9 +294,6 @@ function HomePage() {
           </div>
         </div>
       </footer>
-
-      {/* ChatBot */}
-      <ChatBot />
     </div>
   );
 }

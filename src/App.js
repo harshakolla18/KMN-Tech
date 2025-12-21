@@ -28,7 +28,7 @@ function App() {
     <Router>
       <ScrollToTop />
       <div className="app-container">
-        <Header />
+        <Header onMenuClick={() => setSidebarOpen(true)} />
         <Sidebar 
           open={sidebarOpen} 
           onClose={() => setSidebarOpen(false)}
