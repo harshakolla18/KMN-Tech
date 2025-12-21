@@ -40,21 +40,21 @@ function HomePage() {
     return () => clearInterval(interval);
   }, []);
 
-  {/* Update Teammates Replaced by AI Count */}
-      const teammatesReplacedByAI = 15;
-      useEffect(() => {
-        const interval = setInterval(() => {
-          setReplaceCount(prev => {
-            if (prev < 10) {
-              return prev + 1;
-            } else {
-              clearInterval(interval); // Ensure the interval stops when the count reaches the target
-              return prev;
-            }
-          });
-        }, 500); // Increased interval duration for smoother updates
-        return () => clearInterval(interval);
-      }, [teammatesReplacedByAI]);
+  // Update Teammates Replaced by AI Count
+  const teammatesReplacedByAI = 15;
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setReplaceCount(prev => {
+        if (prev < 10) {
+          return prev + 1;
+        } else {
+          clearInterval(interval); // Ensure the interval stops when the count reaches the target
+          return prev;
+        }
+      });
+    }, 500); // Increased interval duration for smoother updates
+    return () => clearInterval(interval);
+  }, [teammatesReplacedByAI]);
 
   return (
     <div className="home-page">

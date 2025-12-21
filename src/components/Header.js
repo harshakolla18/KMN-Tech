@@ -1,15 +1,25 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { LogIn, Menu } from 'lucide-react';
+import { LogIn, Menu, User } from 'lucide-react';
+import { useAuth } from '../firebase/AuthContext';
 import logoNew from '../images/fevicon.png';
 import './Header.css';
 
-function Header({ onMenuClick }) {
+function Header({ onMenuClick, onLoginClick }) {
   const location = useLocation();
+  const { currentUser, logout } = useAuth();
   
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const handleLogout = async () => {
+    try {
+      await logout();
+    } catch (error) {
+      console.error('Logout failed:', error);
+    }
   };
 
   return (
@@ -43,14 +53,38 @@ function Header({ onMenuClick }) {
           <a href="https://form.jotform.com/253540474507053" target="_blank" rel="noopener noreferrer" className="mobile-request-demo-btn">
             Request Demo
           </a>
-          <motion.button
-            className="signin-button"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            <LogIn size={18} />
-            <span className="signin-text">Login</span>
-          </motion.button>
+          {currentUser ? (
+            <div className="user-profile-section">
+              <div className="user-info">
+                {currentUser.photoURL ? (
+                  <img src={currentUser.photoURL} alt="Profile" className="user-avatar" />
+                ) : (
+                  <div className="user-avatar-placeholder">
+                    <User size={18} />
+                  </div>
+                )}
+                <span className="user-name">{currentUser.displayName || 'User'}</span>
+              </div>
+              <motion.button
+                className="signin-button user-logged-in"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                onClick={handleLogout}
+              >
+                <span className="signin-text">Logout</span>
+              </motion.button>
+            </div>
+          ) : (
+            <motion.button
+              className="signin-button"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              onClick={onLoginClick}
+            >
+              <LogIn size={18} />
+              <span className="signin-text">Login</span>
+            </motion.button>
+          )}
 
           <button className="header-menu-btn" onClick={onMenuClick}>
             <Menu size={24} />

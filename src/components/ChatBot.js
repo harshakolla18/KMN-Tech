@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, Send, MessageCircle } from 'lucide-react';
+import { X, Send } from 'lucide-react';
 import './ChatBot.css';
 
 function ChatBot() {
