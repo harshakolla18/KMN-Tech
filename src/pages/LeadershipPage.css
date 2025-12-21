@@ -1,11 +1,19 @@
 .leadership-page {
   min-height: 100vh;
   padding-top: 6rem;
+  position: relative;
+  background-image: url('../images/1.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 .leadership-header {
   text-align: center;
   padding: 3rem 2rem;
+  margin: 0.5rem 2rem;
+  border-radius: 10px;
   background: linear-gradient(
     135deg,
     rgba(13, 71, 161, 0.8) 0%,

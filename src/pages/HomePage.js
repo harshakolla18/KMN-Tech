@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Zap, Globe, Briefcase, Users } from 'lucide-react';
 import ChatBot from '../components/ChatBot';
+import backgroundImage from '../images/2.png';
 import './HomePage.css';
 
 function HomePage() {
+  const navigate = useNavigate();
   const [agentCount, setAgentCount] = useState(0);
   const [websiteCount, setWebsiteCount] = useState(0);
   const [projectCount, setProjectCount] = useState(0);
@@ -56,19 +59,13 @@ function HomePage() {
 
   return (
     <div className="home-page">
-      {/* Background Video */}
-      <div className="video-background">
-        <video
-          autoPlay
-          muted
-          loop
-          className="background-video"
-          poster="/Bg_video/thumbnail.jpg"
-        >
-          <source src="/Bg_video/background.mp4" type="video/mp4" />
-          {/* Fallback gradient if video doesn't load */}
-        </video>
-        <div className="video-overlay"></div>
+      {/* Background Image */}
+      <div className="image-background">
+        <img
+          src={backgroundImage}
+          alt="Background"
+          className="background-image"
+        />
       </div>
 
       {/* Hero Section */}
@@ -94,6 +91,7 @@ function HomePage() {
             className="cta-button"
             whileHover={{ scale: 1.05, boxShadow: '0 10px 40px rgba(66, 165, 245, 0.4)' }}
             whileTap={{ scale: 0.95 }}
+            onClick={() => navigate('/services')}
           >
             Get Started
           </motion.button>

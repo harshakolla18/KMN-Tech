@@ -7,6 +7,7 @@ import './Sidebar.css';
 function Sidebar({ open, onClose, onOpen }) {
   const menuItems = [
     { name: 'Home', path: '/' },
+    { name: 'Services', path: '/services' },
     { name: 'Leadership', path: '/leadership' },
     { name: 'Projects', path: '/projects' },
     { name: 'Contact', path: '/contact' },
@@ -57,7 +58,7 @@ function Sidebar({ open, onClose, onOpen }) {
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: index * 0.1 }}
             >
-              <Link to={item.path} className="nav-item" onClick={onClose}>
+              <Link to={item.path} className="nav-item" onClick={() => { onClose(); window.scrollTo({ top: 0, behavior: 'smooth' }); }}>
                 {item.name}
               </Link>
             </motion.div>

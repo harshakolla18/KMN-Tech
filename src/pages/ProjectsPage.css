@@ -6,6 +6,8 @@
 .projects-header {
   text-align: center;
   padding: 3rem 2rem;
+  margin: 0.5rem 2rem;
+  border-radius: 10px;
   background: linear-gradient(
     135deg,
     rgba(13, 71, 161, 0.8) 0%,
@@ -19,7 +21,8 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  margin: 0 0 1rem 0;
+  
+
 }
 
 .projects-header p {

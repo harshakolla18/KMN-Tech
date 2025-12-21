@@ -1,6 +1,12 @@
 .contact-page {
   min-height: 100vh;
   padding-top: 6rem;
+  position: relative;
+  background-image: url('../images/contact.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 .contact-header {

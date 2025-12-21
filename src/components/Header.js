@@ -4,6 +4,10 @@ import { motion } from 'framer-motion';
 import './Header.css';
 
 function Header() {
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
     <header className="page-header">
       <motion.div
@@ -12,7 +16,7 @@ function Header() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
       >
-        <Link to="/" className="header-logo-link">
+        <Link to="/" className="header-logo-link" onClick={scrollToTop}>
           <motion.div
             className="header-logo-container"
             whileHover={{ scale: 1.05 }}
@@ -23,10 +27,10 @@ function Header() {
           </motion.div>
         </Link>
         <nav className="header-nav">
-          <Link to="/" className="header-nav-item">Home</Link>
-          <Link to="/leadership" className="header-nav-item">Leadership</Link>
-          <Link to="/projects" className="header-nav-item">Projects</Link>
-          <Link to="/contact" className="header-nav-item">Contact</Link>
+          <Link to="/" className="header-nav-item" onClick={scrollToTop}>Home</Link>
+          <Link to="/services" className="header-nav-item" onClick={scrollToTop}>Our Services</Link>
+          <Link to="/projects" className="header-nav-item" onClick={scrollToTop}>Projects</Link>
+          <Link to="/contact" className="header-nav-item" onClick={scrollToTop}>Contact</Link>
         </nav>
 
         <motion.button

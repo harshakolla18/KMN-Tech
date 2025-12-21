@@ -56,7 +56,7 @@ function ProjectsPage() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
       >
-        <h1>Our Projects</h1>
+        <h1>Projects</h1>
         <p>Showcase of our innovative solutions and successful implementations</p>
       </motion.div>
 
