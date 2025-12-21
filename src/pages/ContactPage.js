@@ -69,8 +69,7 @@ function ContactPage() {
 
           <div className="social-links">
             <motion.a href="#linkedin" className="social-link" whileHover={{ scale: 1.1 }}>LinkedIn</motion.a>
-            <motion.a href="#twitter" className="social-link" whileHover={{ scale: 1.1 }}>Twitter</motion.a>
-            <motion.a href="#facebook" className="social-link" whileHover={{ scale: 1.1 }}>Facebook</motion.a>
+            <motion.a href="#youtube" className="social-link" whileHover={{ scale: 1.1 }}>YouTube</motion.a>
           </div>
         </motion.div>
 

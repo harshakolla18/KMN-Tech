@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Zap, Globe, Briefcase, Users } from 'lucide-react';
 import backgroundImage from '../images/2.png';
@@ -290,7 +290,7 @@ function HomePage() {
           <div className="footer-links">
             <a href="#privacy">Privacy Policy</a>
             <a href="#terms">Terms of Service</a>
-            <a href="#contact">Contact</a>
+            <Link to="/contact">Contact</Link>
           </div>
         </div>
       </footer>
