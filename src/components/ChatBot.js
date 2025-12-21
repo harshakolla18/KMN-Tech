@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, Send, MessageCircle } from 'lucide-react';
+import { X, Send } from 'lucide-react';
 import './ChatBot.css';
 
 function ChatBot() {
@@ -10,7 +10,7 @@ function ChatBot() {
     {
       id: 1,
       type: 'bot',
-      text: 'Hello! 👋 I\'m the KMN AI Assistant. How can I help you today?',
+      text: 'Hello! 👋 I\'m the Neos Tech AI Assistant. How can I help you today?',
     },
   ]);
   const [inputValue, setInputValue] = useState('');
@@ -34,7 +34,7 @@ function ChatBot() {
     contact: {
       trigger: ['contact', 'reach', 'email', 'phone'],
       response:
-        'You can contact us at info@kmn-consulting.com or call +91 (555) 123-4567. We\'re here to help!',
+        'You can contact us at info@neostech.com or call +91 (555) 123-4567. We\'re here to help!',
     },
     technology: {
       trigger: ['technology', 'stack', 'react', 'tools'],
@@ -57,7 +57,7 @@ function ChatBot() {
       }
     }
 
-    return 'I\'m not sure about that. Please contact us at info@kmn-consulting.com or ask about our services, timeline, support, technology, pricing, or how to contact us!';
+    return 'I\'m not sure about that. Please contact us at info@neostech.com or ask about our services, timeline, support, technology, pricing, or how to contact us!';
   };
 
   const handleSendMessage = () => {
@@ -150,7 +150,7 @@ function ChatBot() {
                   <line x1="60" y1="175" x2="140" y2="175" stroke="#B3D9F0" strokeWidth="2"/>
                 </svg>
                 <div>
-                  <h3>KMN Assistant</h3>
+                  <h3>Neos Tech Assistant</h3>
                   <p className="online-status">Online</p>
                 </div>
               </div>

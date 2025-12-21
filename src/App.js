@@ -1,8 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { AuthProvider } from './firebase/AuthContext';
 import Sidebar from './components/Sidebar';
 import Header from './components/Header';
+import ChatBot from './components/ChatBot';
+import LoginModal from './components/LoginModal';
 import HomePage from './pages/HomePage';
+import ServicesPage from './pages/ServicesPage';
 import LeadershipPage from './pages/LeadershipPage';
 import ProjectsPage from './pages/ProjectsPage';
 import ContactPage from './pages/ContactPage';
@@ -21,27 +25,40 @@ function ScrollToTop() {
 
 function App() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [loginModalOpen, setLoginModalOpen] = useState(false);
 
   return (
-    <Router>
-      <ScrollToTop />
-      <div className="app-container">
-        <Header />
-        <Sidebar 
-          open={sidebarOpen} 
-          onClose={() => setSidebarOpen(false)}
-          onOpen={() => setSidebarOpen(true)}
-        />
-        <main className="main-content">
-          <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/leadership" element={<LeadershipPage />} />
-            <Route path="/projects" element={<ProjectsPage />} />
-            <Route path="/contact" element={<ContactPage />} />
-          </Routes>
-        </main>
-      </div>
-    </Router>
+    <AuthProvider>
+      <Router>
+        <ScrollToTop />
+        <div className="app-container">
+          <Header 
+            onMenuClick={() => setSidebarOpen(true)} 
+            onLoginClick={() => setLoginModalOpen(true)}
+          />
+          <Sidebar 
+            open={sidebarOpen} 
+            onClose={() => setSidebarOpen(false)}
+            onOpen={() => setSidebarOpen(true)}
+            onLoginClick={() => setLoginModalOpen(true)}
+          />
+          <main className="main-content">
+            <Routes>
+              <Route path="/" element={<HomePage />} />
+              <Route path="/services" element={<ServicesPage />} />
+              <Route path="/leadership" element={<LeadershipPage />} />
+              <Route path="/projects" element={<ProjectsPage />} />
+              <Route path="/contact" element={<ContactPage />} />
+            </Routes>
+          </main>
+          <ChatBot />
+          <LoginModal 
+            isOpen={loginModalOpen} 
+            onClose={() => setLoginModalOpen(false)} 
+          />
+        </div>
+      </Router>
+    </AuthProvider>
   );
 }
 

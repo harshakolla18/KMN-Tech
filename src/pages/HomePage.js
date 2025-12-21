@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react';
+import { useNavigate, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Zap, Globe, Briefcase, Users } from 'lucide-react';
-import ChatBot from '../components/ChatBot';
+import backgroundImage from '../images/2.png';
 import './HomePage.css';
 
 function HomePage() {
+  const navigate = useNavigate();
   const [agentCount, setAgentCount] = useState(0);
   const [websiteCount, setWebsiteCount] = useState(0);
   const [projectCount, setProjectCount] = useState(0);
@@ -38,37 +40,31 @@ function HomePage() {
     return () => clearInterval(interval);
   }, []);
 
-  {/* Update Teammates Replaced by AI Count */}
-      const teammatesReplacedByAI = 15;
-      useEffect(() => {
-        const interval = setInterval(() => {
-          setReplaceCount(prev => {
-            if (prev < 10) {
-              return prev + 1;
-            } else {
-              clearInterval(interval); // Ensure the interval stops when the count reaches the target
-              return prev;
-            }
-          });
-        }, 500); // Increased interval duration for smoother updates
-        return () => clearInterval(interval);
-      }, [teammatesReplacedByAI]);
+  // Update Teammates Replaced by AI Count
+  const teammatesReplacedByAI = 15;
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setReplaceCount(prev => {
+        if (prev < 10) {
+          return prev + 1;
+        } else {
+          clearInterval(interval); // Ensure the interval stops when the count reaches the target
+          return prev;
+        }
+      });
+    }, 500); // Increased interval duration for smoother updates
+    return () => clearInterval(interval);
+  }, [teammatesReplacedByAI]);
 
   return (
     <div className="home-page">
-      {/* Background Video */}
-      <div className="video-background">
-        <video
-          autoPlay
-          muted
-          loop
-          className="background-video"
-          poster="/Bg_video/thumbnail.jpg"
-        >
-          <source src="/Bg_video/background.mp4" type="video/mp4" />
-          {/* Fallback gradient if video doesn't load */}
-        </video>
-        <div className="video-overlay"></div>
+      {/* Background Image */}
+      <div className="image-background">
+        <img
+          src={backgroundImage}
+          alt="Background"
+          className="background-image"
+        />
       </div>
 
       {/* Hero Section */}
@@ -94,6 +90,7 @@ function HomePage() {
             className="cta-button"
             whileHover={{ scale: 1.05, boxShadow: '0 10px 40px rgba(66, 165, 245, 0.4)' }}
             whileTap={{ scale: 0.95 }}
+            onClick={() => navigate('/services')}
           >
             Get Started
           </motion.button>
@@ -152,7 +149,7 @@ function HomePage() {
       >
         <h2 className="section-title">How We Work</h2>
         <p className="how-it-works-desc">
-          Simplify your digital transformation with KMN IT & Consulting. No complex setup, no lengthy onboarding.
+          Simplify your digital transformation with Neos Tech. No complex setup, no lengthy onboarding.
         </p>
         <div className="how-it-works-grid">
           {[
@@ -289,17 +286,14 @@ function HomePage() {
       {/* Footer */}
       <footer className="footer">
         <div className="footer-content">
-          <p>&copy; 2026 KMN IT & Consulting. All rights reserved.</p>
+          <p>&copy; 2026 Neos Tech. All rights reserved.</p>
           <div className="footer-links">
             <a href="#privacy">Privacy Policy</a>
             <a href="#terms">Terms of Service</a>
-            <a href="#contact">Contact</a>
+            <Link to="/contact">Contact</Link>
           </div>
         </div>
       </footer>
-
-      {/* ChatBot */}
-      <ChatBot />
     </div>
   );
 }

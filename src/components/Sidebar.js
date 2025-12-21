@@ -1,131 +1,101 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
-import { Menu, X, Github, Linkedin, Twitter, Mail, Phone } from 'lucide-react';
+import { Link, useLocation } from 'react-router-dom';
+import { X, LogIn, LogOut, User } from 'lucide-react';
+import { useAuth } from '../firebase/AuthContext';
+import logoNew from '../images/fevicon.png';
 import './Sidebar.css';
 
-function Sidebar({ open, onClose, onOpen }) {
+function Sidebar({ open, onClose, onOpen, onLoginClick }) {
+  const location = useLocation();
+  const { currentUser, logout } = useAuth();
+  
   const menuItems = [
     { name: 'Home', path: '/' },
-    { name: 'Leadership', path: '/leadership' },
+    { name: 'Our Services', path: '/services' },
     { name: 'Projects', path: '/projects' },
+    { name: 'Leadership', path: '/leadership' },
     { name: 'Contact', path: '/contact' },
   ];
 
-  const socialLinks = [
-    { icon: Linkedin, href: '#linkedin', label: 'LinkedIn' },
-    { icon: Twitter, href: '#twitter', label: 'Twitter' },
-    { icon: Github, href: '#github', label: 'GitHub' },
-  ];
+  const handleLogout = async () => {
+    try {
+      await logout();
+      onClose();
+    } catch (error) {
+      console.error('Logout failed:', error);
+    }
+  };
 
-  const contactOptions = [
-    { icon: Mail, text: 'info@kmn-consulting.com', href: 'mailto:info@kmn-consulting.com' },
-    { icon: Phone, text: '+91 (555) 123-4567', href: 'tel:+915551234567' },
-  ];
+  const handleLoginClick = () => {
+    onClose();
+    onLoginClick();
+  };
 
   return (
     <>
-      <motion.div
-        className={`sidebar ${open ? 'open' : ''}`}
-        initial={{ x: -300 }}
-        animate={{ x: open ? 0 : -300 }}
-        transition={{ type: 'spring', stiffness: 300, damping: 30 }}
-      >
+      <div className={`sidebar ${open ? 'open' : ''}`}>
         <div className="sidebar-header">
           <Link to="/" className="sidebar-logo-link" onClick={onClose}>
-            <h1 className="sidebar-logo">KMN</h1>
+            <img src={logoNew} alt="Neos Tech Logo" className="sidebar-logo-image" />
+            <h1 className="sidebar-logo">Neos Tech</h1>
           </Link>
           <button className="close-btn" onClick={onClose}>
             <X size={24} />
           </button>
         </div>
 
-        <div className="sidebar-profile">
-          <div className="profile-avatar">
-            <img src="/logo.png" alt="KMN Logo" className="avatar-logo" />
-          </div>
-          <div className="profile-info">
-            <h3 className="profile-name">KMN Team</h3>
-          </div>
-        </div>
+        <div className="sidebar-divider"></div>
         
         <nav className="sidebar-nav">
-          {menuItems.map((item, index) => (
-            <motion.div
-              key={item.name}
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: index * 0.1 }}
-            >
-              <Link to={item.path} className="nav-item" onClick={onClose}>
+          {menuItems.map((item) => (
+            <div key={item.name}>
+              <Link 
+                to={item.path} 
+                className={`nav-item ${location.pathname === item.path ? 'active' : ''}`} 
+                onClick={() => { onClose(); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
+              >
                 {item.name}
               </Link>
-            </motion.div>
+            </div>
           ))}
         </nav>
 
-        <div className="sidebar-divider"></div>
-
-        <div className="sidebar-section">
-          <h3 className="sidebar-section-title">Contact</h3>
-          {contactOptions.map((option, index) => (
-            <motion.a
-              key={index}
-              href={option.href}
-              className="sidebar-contact-item"
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.4 + index * 0.1 }}
-            >
-              <option.icon size={16} />
-              <span>{option.text}</span>
-            </motion.a>
-          ))}
+        <div className="sidebar-buttons">
+          {currentUser && (
+            <div className="sidebar-user-profile">
+              {currentUser.photoURL ? (
+                <img src={currentUser.photoURL} alt="Profile" className="sidebar-user-avatar" />
+              ) : (
+                <div className="sidebar-user-avatar-placeholder">
+                  <User size={24} />
+                </div>
+              )}
+              <div className="sidebar-user-info">
+                <span className="sidebar-user-name">{currentUser.displayName || 'User'}</span>
+                <span className="sidebar-user-email">{currentUser.email}</span>
+              </div>
+            </div>
+          )}
+          <a href="https://form.jotform.com/253540474507053" target="_blank" rel="noopener noreferrer" className="sidebar-btn sidebar-btn-primary">
+            Request Demo
+          </a>
+          {currentUser ? (
+            <button className="sidebar-btn sidebar-btn-secondary" onClick={handleLogout}>
+              <LogOut size={18} />
+              Logout
+            </button>
+          ) : (
+            <button className="sidebar-btn sidebar-btn-secondary" onClick={handleLoginClick}>
+              <LogIn size={18} />
+              Sign In
+            </button>
+          )}
         </div>
-
-        <div className="sidebar-divider"></div>
-
-        <div className="sidebar-section">
-          <h3 className="sidebar-section-title">Follow Us</h3>
-          <div className="sidebar-social">
-            {socialLinks.map((link, index) => (
-              <motion.a
-                key={index}
-                href={link.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="social-icon"
-                whileHover={{ scale: 1.2 }}
-                whileTap={{ scale: 0.9 }}
-                initial={{ opacity: 0, scale: 0 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 0.7 + index * 0.1 }}
-                title={link.label}
-              >
-                <link.icon size={20} />
-              </motion.a>
-            ))}
-          </div>
-        </div>
-      </motion.div>
+      </div>
 
       {open && (
-        <motion.div
-          className="sidebar-overlay"
-          onClick={onClose}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-        />
+        <div className="sidebar-overlay" onClick={onClose} />
       )}
-
-      <motion.button
-        className="menu-toggle"
-        onClick={() => (open ? onClose() : onOpen())}
-        whileHover={{ scale: 1.1 }}
-        whileTap={{ scale: 0.95 }}
-      >
-        <Menu size={28} />
-      </motion.button>
     </>
   );
 }

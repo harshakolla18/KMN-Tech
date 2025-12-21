@@ -56,7 +56,7 @@ function ProjectsPage() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
       >
-        <h1>Our Projects</h1>
+        <h1>Projects</h1>
         <p>Showcase of our innovative solutions and successful implementations</p>
       </motion.div>
 
@@ -127,7 +127,7 @@ function ProjectsPage() {
 
       <footer className="footer">
         <div className="footer-content">
-          <p>&copy; 2024 KMN IT & Consulting. All rights reserved.</p>
+          <p>&copy; 2024 Neos Tech. All rights reserved.</p>
         </div>
       </footer>
     </div>

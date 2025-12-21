@@ -56,7 +56,7 @@ function ContactPage() {
           </div>
           <div className="info-item">
             <span className="info-label">📧 Email</span>
-            <p>info@kmn-consulting.com</p>
+            <p>info@neostech.com</p>
           </div>
           <div className="info-item">
             <span className="info-label">📱 Phone</span>
@@ -69,8 +69,7 @@ function ContactPage() {
 
           <div className="social-links">
             <motion.a href="#linkedin" className="social-link" whileHover={{ scale: 1.1 }}>LinkedIn</motion.a>
-            <motion.a href="#twitter" className="social-link" whileHover={{ scale: 1.1 }}>Twitter</motion.a>
-            <motion.a href="#facebook" className="social-link" whileHover={{ scale: 1.1 }}>Facebook</motion.a>
+            <motion.a href="#youtube" className="social-link" whileHover={{ scale: 1.1 }}>YouTube</motion.a>
           </div>
         </motion.div>
 
@@ -190,7 +189,7 @@ function ContactPage() {
 
       <footer className="footer">
         <div className="footer-content">
-          <p>&copy; 2026 KMN IT & Consulting. All rights reserved.</p>
+          <p>&copy; 2026 Neos Tech. All rights reserved.</p>
         </div>
       </footer>
     </div>

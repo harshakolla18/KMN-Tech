@@ -32,8 +32,8 @@ function LeadershipPage() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
       >
-        <h1>Our Leadership Team</h1>
-        <p>Meet the visionaries driving innovation at KMN IT & Consulting</p>
+        <h1>Our Team</h1>
+        <p>Meet the visionaries driving innovation at Neos Tech</p>
       </motion.div>
 
       <div className="leaders-container">
@@ -96,7 +96,7 @@ function LeadershipPage() {
 
       <footer className="footer">
         <div className="footer-content">
-          <p>&copy; 2026 KMN IT & Consulting. All rights reserved.</p>
+          <p>&copy; 2026 Neos Tech. All rights reserved.</p>
         </div>
       </footer>
     </div>
