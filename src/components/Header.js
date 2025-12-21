@@ -36,9 +36,13 @@ function Header({ onMenuClick }) {
           <Link to="/projects" className={`header-nav-item ${location.pathname === '/projects' ? 'active' : ''}`} onClick={scrollToTop}>Projects</Link>
           <Link to="/leadership" className={`header-nav-item ${location.pathname === '/leadership' ? 'active' : ''}`} onClick={scrollToTop}>Leadership</Link>
           <Link to="/contact" className={`header-nav-item ${location.pathname === '/contact' ? 'active' : ''}`} onClick={scrollToTop}>Contact</Link>
+          <a href="https://form.jotform.com/253540474507053" target="_blank" rel="noopener noreferrer" className="header-nav-item request-demo-btn">Request Demo</a>
         </nav>
 
         <div className="header-actions">
+          <a href="https://form.jotform.com/253540474507053" target="_blank" rel="noopener noreferrer" className="mobile-request-demo-btn">
+            Request Demo
+          </a>
           <motion.button
             className="signin-button"
             whileHover={{ scale: 1.05 }}

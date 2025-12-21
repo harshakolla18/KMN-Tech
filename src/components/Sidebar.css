@@ -125,13 +125,16 @@
 }
 
 .sidebar-btn-primary {
-  background: rgba(66, 165, 245, 0.15);
-  border: 1px solid rgba(66, 165, 245, 0.3);
-  color: #90caf9;
+  background: linear-gradient(135deg, #FFD700, #FFA500);
+  border: none;
+  color: #0d1b2a;
+  font-weight: 600;
+  text-decoration: none;
 }
 
 .sidebar-btn-primary:hover {
-  background: rgba(66, 165, 245, 0.25);
+  background: linear-gradient(135deg, #FFA500, #FF8C00);
+  box-shadow: 0 4px 12px rgba(255, 215, 0, 0.3);
 }
 
 .sidebar-btn-secondary {

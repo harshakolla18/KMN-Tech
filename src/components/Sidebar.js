@@ -45,9 +45,9 @@ function Sidebar({ open, onClose, onOpen }) {
         </nav>
 
         <div className="sidebar-buttons">
-          <button className="sidebar-btn sidebar-btn-primary">
+          <a href="https://form.jotform.com/253540474507053" target="_blank" rel="noopener noreferrer" className="sidebar-btn sidebar-btn-primary">
             Request Demo
-          </button>
+          </a>
           <button className="sidebar-btn sidebar-btn-secondary">
             <LogIn size={18} />
             Sign In
