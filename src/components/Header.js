@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import logoNew from '../images/fevicon.png';
 import './Header.css';
 
 function Header() {
@@ -22,8 +23,8 @@ function Header() {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            <div className="header-logo">KMN</div>
-            <div className="header-logo-subtitle"><br></br>IT & Consulting</div>
+            <img src={logoNew} alt="Neos Tech Logo" className="header-logo-image" />
+            <div className="header-logo">Neos Tech</div>
           </motion.div>
         </Link>
         <nav className="header-nav">

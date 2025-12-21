@@ -150,7 +150,7 @@ function HomePage() {
       >
         <h2 className="section-title">How We Work</h2>
         <p className="how-it-works-desc">
-          Simplify your digital transformation with KMN IT & Consulting. No complex setup, no lengthy onboarding.
+          Simplify your digital transformation with Neos Tech. No complex setup, no lengthy onboarding.
         </p>
         <div className="how-it-works-grid">
           {[
@@ -287,7 +287,7 @@ function HomePage() {
       {/* Footer */}
       <footer className="footer">
         <div className="footer-content">
-          <p>&copy; 2026 KMN IT & Consulting. All rights reserved.</p>
+          <p>&copy; 2026 Neos Tech. All rights reserved.</p>
           <div className="footer-links">
             <a href="#privacy">Privacy Policy</a>
             <a href="#terms">Terms of Service</a>

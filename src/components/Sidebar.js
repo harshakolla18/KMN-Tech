@@ -20,7 +20,7 @@ function Sidebar({ open, onClose, onOpen }) {
   ];
 
   const contactOptions = [
-    { icon: Mail, text: 'info@kmn-consulting.com', href: 'mailto:info@kmn-consulting.com' },
+    { icon: Mail, text: 'info@neostech.com', href: 'mailto:info@neostech.com' },
     { icon: Phone, text: '+91 (555) 123-4567', href: 'tel:+915551234567' },
   ];
 
@@ -34,20 +34,11 @@ function Sidebar({ open, onClose, onOpen }) {
       >
         <div className="sidebar-header">
           <Link to="/" className="sidebar-logo-link" onClick={onClose}>
-            <h1 className="sidebar-logo">KMN</h1>
+            <h1 className="sidebar-logo">Neos Tech</h1>
           </Link>
           <button className="close-btn" onClick={onClose}>
             <X size={24} />
           </button>
-        </div>
-
-        <div className="sidebar-profile">
-          <div className="profile-avatar">
-            <img src="/logo.png" alt="KMN Logo" className="avatar-logo" />
-          </div>
-          <div className="profile-info">
-            <h3 className="profile-name">KMN Team</h3>
-          </div>
         </div>
         
         <nav className="sidebar-nav">

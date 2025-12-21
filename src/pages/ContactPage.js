@@ -56,7 +56,7 @@ function ContactPage() {
           </div>
           <div className="info-item">
             <span className="info-label">📧 Email</span>
-            <p>info@kmn-consulting.com</p>
+            <p>info@neostech.com</p>
           </div>
           <div className="info-item">
             <span className="info-label">📱 Phone</span>
@@ -190,7 +190,7 @@ function ContactPage() {
 
       <footer className="footer">
         <div className="footer-content">
-          <p>&copy; 2026 KMN IT & Consulting. All rights reserved.</p>
+          <p>&copy; 2026 Neos Tech. All rights reserved.</p>
         </div>
       </footer>
     </div>

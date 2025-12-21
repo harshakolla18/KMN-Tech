@@ -12,6 +12,8 @@
 .contact-header {
   text-align: center;
   padding: 3rem 2rem;
+  margin: 1rem 2rem;
+  border-radius: 10px;
   background: linear-gradient(
     135deg,
     rgba(13, 71, 161, 0.8) 0%,
