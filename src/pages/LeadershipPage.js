@@ -10,7 +10,7 @@ function LeadershipPage() {
     {
       name: 'Harsha Kolla',
       role: 'Founder',
-      bio: 'Harsha Kolla is the founder of Neos Tech, with 4+ years of experience in building enterprise-grade applications and AI agents, delivering robust and intelligent solutions for modern businesses. He is passionate about leveraging technology to solve real-world problems and has led multiple successful projects in the fields of artificial intelligence, cloud computing, and digital transformation. Harsha is dedicated to fostering innovation, empowering teams, and driving the company’s vision to create impactful, future-ready solutions for clients worldwide.',
+      bio: 'Harsha Kolla is the founder of Neos Tech. His journey began with a passion for technology and a drive to solve real-world problems. Over the years, Harsha has transformed ideas into impactful solutions, leading the development of enterprise-grade applications and AI-driven platforms for global clients. From building robust trade settlement systems to architecting analytics pipelines that process massive data, his work reflects a commitment to innovation, teamwork, and continuous learning. Harsha believes in empowering teams, embracing challenges, and creating technology that makes a difference for businesses and communities worldwide.',
       image: harshakollaJpeg,
     },
 
@@ -92,34 +92,26 @@ function LeadershipPage() {
                 </div>
                 <div style={{ flex: 1, textAlign: 'left' }}>
                   <h2 style={{ fontSize: '2.2rem', marginBottom: '0.5rem', color: '#0d47a1' }}>{leader.name}</h2>
-                  <h3 style={{ color: '#bfa14a', fontWeight: 700, marginBottom: '1.2rem', fontSize: '1.3rem' }}>{leader.role} <span style={{ color: '#607d8b', fontWeight: 400, fontSize: '1.1rem' }}>| Software Engineer</span></h3>
-                  <p style={{ fontSize: '1.1rem', color: '#263238', marginBottom: '1.2rem' }}>
-                    I&apos;m <b>Reddy Harsha Vardhan</b>, a Software Engineer with 4+ years of experience delivering impactful results for global financial institutions and technology-driven businesses.<br /><br />
-                    I have led the development of trade settlement platforms processing over 1.5 million transactions daily, and architected AI-driven analytics pipelines handling 4.2 TB of market data weekly—reducing insight turnaround time from 90 minutes to under 20. My work has enabled organizations to automate insight generation, accelerate digital transformation, and achieve operational excellence at scale.<br /><br />
-                    I am committed to driving innovation and delivering solutions that make a measurable difference for clients and teams worldwide.
+                  <h3 style={{ color: '#bfa14a', fontWeight: 700, marginBottom: '1.2rem', fontSize: '1.3rem' }}>{leader.role} <span style={{ color: '#FFD600', fontWeight: 400, fontSize: '1.1rem' }}>| Software Engineer</span></h3>
+                  <p style={{ fontSize: '1.1rem', color: '#212121', marginBottom: '1.2rem' }}>
+                    His journey began with a passion for technology and a drive to solve real-world problems. Over the years, Harsha has transformed ideas into impactful solutions, leading the development of enterprise-grade applications and AI-driven platforms for global clients. From building robust trade settlement systems to architecting analytics pipelines that process massive data, his work reflects a commitment to innovation, teamwork, and continuous learning. Harsha believes in empowering teams, embracing challenges, and creating technology that makes a difference for businesses and communities worldwide.<br /><br />
+                    <span style={{ display: 'block', fontStyle: 'italic', color: '#FFD600', marginTop: '1rem' }}>&quot;We transform ideas into scalable digital platforms built for growth.&quot; &mdash; <b>Harsha Kolla</b></span>
                   </p>
-                  <div style={{ marginBottom: '1.2rem' }}>
-                    <span style={{ fontWeight: 600, color: '#1976d2', fontSize: '1.1rem' }}>Education</span>
-                    <div style={{ marginTop: '0.3rem', background: 'rgba(25,118,210,0.07)', borderRadius: '8px', padding: '0.7rem 1.2rem', display: 'inline-block' }}>
-                      <div style={{ fontWeight: 600 }}>Master of Science in Computer Science</div>
-                      <div style={{ color: '#607d8b', fontSize: '1rem' }}>Saint Louis University, Saint Louis, Missouri</div>
-                    </div>
-                  </div>
                   <motion.a
                     href="https://www.harshakolla18.com" target="_blank" rel="noopener noreferrer"
                     className="profile-button"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    style={{ display: 'inline-block', textDecoration: 'none', color: 'inherit', marginRight: '1rem' }}
+                    style={{ display: 'inline-block', textDecoration: 'none', color: '#fff', marginRight: '1rem' }}
                   >
-                    Portfolio
+                    Learn more
                   </motion.a>
                   <motion.a
                     href="https://www.linkedin.com/in/harsha-kolla/" target="_blank" rel="noopener noreferrer"
                     className="profile-button"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    style={{ display: 'inline-block', textDecoration: 'none', color: 'inherit' }}
+                    style={{ display: 'inline-block', textDecoration: 'none', color: '#fff' }}
                   >
                     LinkedIn
                   </motion.a>
@@ -239,7 +231,7 @@ function LeadershipPage() {
                   className="profile-button"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  style={{ display: 'inline-block', textDecoration: 'none', color: 'inherit' }}
+                  style={{ display: 'inline-block', textDecoration: 'none', color: '#fff' }}
                 >
                   Learn More
                 </motion.a>
