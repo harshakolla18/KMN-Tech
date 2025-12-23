@@ -56,7 +56,7 @@ function CustomFooter() {
         </div>
       </div>
       <div className="footer-bottom">
-        <span>© 2025 Neos Tech. All rights reserved.</span>
+        <span>© 2026 Neos Tech. All rights reserved.</span>
         <div className="footer-socials">
           <a href="https://twitter.com/neostech" aria-label="Twitter" target="_blank" rel="noopener noreferrer"><i className="fab fa-twitter"></i></a>
           <a href="https://github.com/neostech" aria-label="GitHub" target="_blank" rel="noopener noreferrer"><i className="fab fa-github"></i></a>
