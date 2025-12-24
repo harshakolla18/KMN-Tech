@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 import './AboutPage.css';
 import aboutIllustration from '../images/aboutus.png';
 import tabLogo from '../images/tab logo.png';
@@ -6,7 +7,17 @@ import CustomFooter from '../components/CustomFooter';
 
 function AboutPage() {
   return (
-    <div className="aboutpage-style" style={{ background: '#000', minHeight: '100vh', color: '#fff' }}>
+    <>
+      <Helmet>
+        <title>About Neos Tech | Digital Innovation & Global Team</title>
+        <meta name="description" content="Learn about Neos Tech, our global team, mission, and digital innovation expertise in the US, India, and South Africa." />
+        <meta property="og:title" content="About Neos Tech | Digital Innovation & Global Team" />
+        <meta property="og:description" content="Learn about Neos Tech, our global team, mission, and digital innovation expertise in the US, India, and South Africa." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://neostechus.com/about" />
+        <meta property="og:image" content="https://neostechus.com/logo.png" />
+      </Helmet>
+      <div className="aboutpage-style" style={{ background: '#000', minHeight: '100vh', color: '#fff' }}>
       <div className="aboutpage-hero-section" style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between', padding: '3rem 5vw 2rem 5vw', minHeight: '60vh', marginTop: '2.5rem' }}>
         <div className="aboutpage-illustration" style={{ flex: '1 1 400px', minWidth: 320, maxWidth: 520 }}>
           <img src={aboutIllustration} alt="About Neos Tech" style={{ width: '100%', maxWidth: 480, height: 'auto', display: 'block' }} />
@@ -35,6 +46,7 @@ function AboutPage() {
       </div>
       <CustomFooter />
     </div>
+    </>
   );
 }
 

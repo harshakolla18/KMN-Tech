@@ -12,6 +12,7 @@ import ProjectsPage from './pages/ProjectsPage';
 import ContactPage from './pages/ContactPage';
 import AboutPage from './pages/AboutPage';
 import './App.css';
+import { HelmetProvider } from 'react-helmet-async';
 
 // ScrollToTop component to handle scroll restoration
 function ScrollToTop() {
@@ -29,38 +30,40 @@ function App() {
   const [loginModalOpen, setLoginModalOpen] = useState(false);
 
   return (
-    <AuthProvider>
-      <Router>
-        <ScrollToTop />
-        <div className="app-container">
-          <Header 
-            onMenuClick={() => setSidebarOpen(true)} 
-            onLoginClick={() => setLoginModalOpen(true)}
-          />
-          <Sidebar 
-            open={sidebarOpen} 
-            onClose={() => setSidebarOpen(false)}
-            onOpen={() => setSidebarOpen(true)}
-            onLoginClick={() => setLoginModalOpen(true)}
-          />
-          <main className="main-content">
-            <Routes>
-              <Route path="/" element={<HomePage />} />
-              <Route path="/services" element={<ServicesPage />} />
-              <Route path="/leadership" element={<LeadershipPage />} />
-              <Route path="/projects" element={<ProjectsPage />} />
-              <Route path="/contact" element={<ContactPage />} />
-              <Route path="/about" element={<AboutPage />} />
-            </Routes>
-          </main>
-          <ChatBot />
-          <LoginModal 
-            isOpen={loginModalOpen} 
-            onClose={() => setLoginModalOpen(false)} 
-          />
-        </div>
-      </Router>
-    </AuthProvider>
+    <HelmetProvider>
+      <AuthProvider>
+        <Router>
+          <ScrollToTop />
+          <div className="app-container">
+            <Header 
+              onMenuClick={() => setSidebarOpen(true)} 
+              onLoginClick={() => setLoginModalOpen(true)}
+            />
+            <Sidebar 
+              open={sidebarOpen} 
+              onClose={() => setSidebarOpen(false)}
+              onOpen={() => setSidebarOpen(true)}
+              onLoginClick={() => setLoginModalOpen(true)}
+            />
+            <main className="main-content">
+              <Routes>
+                <Route path="/" element={<HomePage />} />
+                <Route path="/services" element={<ServicesPage />} />
+                <Route path="/leadership" element={<LeadershipPage />} />
+                <Route path="/projects" element={<ProjectsPage />} />
+                <Route path="/contact" element={<ContactPage />} />
+                <Route path="/about" element={<AboutPage />} />
+              </Routes>
+            </main>
+            <ChatBot />
+            <LoginModal 
+              isOpen={loginModalOpen} 
+              onClose={() => setLoginModalOpen(false)} 
+            />
+          </div>
+        </Router>
+      </AuthProvider>
+    </HelmetProvider>
   );
 }
 

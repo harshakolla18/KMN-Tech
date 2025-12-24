@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://neostechus.com/sitemap.xml

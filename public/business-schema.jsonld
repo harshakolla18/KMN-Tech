@@ -1,0 +1,26 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Neos Tech",
+  "url": "https://neostechus.com/",
+  "logo": "https://neostechus.com/logo.png",
+  "description": "Neos Tech delivers AI-powered solutions, digital transformation, and consulting for businesses in the US, India, and South Africa.",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "",
+    "addressLocality": "St. Louis",
+    "addressRegion": "MO",
+    "postalCode": "",
+    "addressCountry": "US"
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+1-555-123-4567",
+    "contactType": "customer service",
+    "email": "info@neostechus.com"
+  },
+  "sameAs": [
+    "https://www.linkedin.com/company/neos-tech/",
+    "https://www.youtube.com/@neostech"
+  ]
+}
