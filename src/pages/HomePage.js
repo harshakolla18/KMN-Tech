@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Helmet } from 'react-helmet-async';
 import { useNavigate, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Zap, Globe, Briefcase, Users } from 'lucide-react';
@@ -58,13 +59,26 @@ function HomePage() {
   }, [teammatesReplacedByAI]);
 
   return (
-    <div className="home-page">
+    <>
+      <Helmet>
+        <title>Neos Tech | AI, Digital Solutions & Consulting</title>
+        <meta name="description" content="Neos Tech delivers AI-powered solutions, digital transformation, and consulting for businesses in the US, India, and South Africa. Reinvent your business with scalable technology." />
+        <meta property="og:title" content="Neos Tech | AI, Digital Solutions & Consulting" />
+        <meta property="og:description" content="Neos Tech delivers AI-powered solutions, digital transformation, and consulting for businesses in the US, India, and South Africa." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://neostechus.com/" />
+        <meta property="og:image" content="https://neostechus.com/logo.png" />
+        <link rel="canonical" href="https://neostechus.com/" />
+        <link rel="alternate" type="application/ld+json" href="/business-schema.jsonld" />
+      </Helmet>
+      <div className="home-page">
       {/* Background Image */}
       <div className="image-background">
         <img
           src={backgroundImage}
-          alt="Background"
+          alt="Neos Tech digital solutions background illustration"
           className="background-image"
+          loading="lazy"
         />
       </div>
 
@@ -81,6 +95,7 @@ function HomePage() {
           animate={{ scale: 1, opacity: 1 }}
           transition={{ delay: 0.2, duration: 0.6 }}
         >
+          <h1 className="hero-title">Empowering Digital Reinvention</h1>
           <p
             className="hero-slogan focus-in-contract"
             style={{ animationDelay: '0s', animationDuration: '5s' }}
@@ -287,6 +302,7 @@ function HomePage() {
       {/* Footer */}
       <CustomFooter />
     </div>
+    </>
   );
 }
 

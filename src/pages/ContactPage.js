@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Helmet } from 'react-helmet-async';
 import { db } from '../firebase/config';
 import { collection, addDoc } from 'firebase/firestore';
 import { motion } from 'framer-motion';
@@ -41,7 +42,17 @@ function ContactPage() {
   };
 
   return (
-    <div className="contact-page">
+    <>
+      <Helmet>
+        <title>Contact Neos Tech | Get in Touch</title>
+        <meta name="description" content="Contact Neos Tech for AI, web development, and consulting services. Reach out to our team in the US, India, or South Africa." />
+        <meta property="og:title" content="Contact Neos Tech | Get in Touch" />
+        <meta property="og:description" content="Contact Neos Tech for AI, web development, and consulting services. Reach out to our team in the US, India, or South Africa." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://neostechus.com/contact" />
+        <meta property="og:image" content="https://neostechus.com/logo.png" />
+      </Helmet>
+      <div className="contact-page">
       <motion.div
         className="contact-header"
         initial={{ opacity: 0, y: -20 }}
@@ -203,6 +214,7 @@ function ContactPage() {
         </div>
       </footer>
     </div>
+    </>
   );
 }
 
