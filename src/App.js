@@ -10,6 +10,7 @@ import ServicesPage from './pages/ServicesPage';
 import LeadershipPage from './pages/LeadershipPage';
 import ProjectsPage from './pages/ProjectsPage';
 import ContactPage from './pages/ContactPage';
+import AboutPage from './pages/AboutPage';
 import './App.css';
 
 // ScrollToTop component to handle scroll restoration
@@ -49,6 +50,7 @@ function App() {
               <Route path="/leadership" element={<LeadershipPage />} />
               <Route path="/projects" element={<ProjectsPage />} />
               <Route path="/contact" element={<ContactPage />} />
+              <Route path="/about" element={<AboutPage />} />
             </Routes>
           </main>
           <ChatBot />

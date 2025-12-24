@@ -1,3 +1,12 @@
+/* Highlight company names in bios */
+.company-highlight {
+  color: #FFD700;
+  font-weight: bold;
+  background: linear-gradient(90deg, #FFD700 60%, #FFA500 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
 .leadership-page {
   min-height: 100vh;
   padding-top: 6rem;
@@ -67,6 +76,15 @@
   font-size: 3rem;
   margin: 0 auto 1.5rem;
   box-shadow: 0 10px 30px rgba(66, 165, 245, 0.3);
+}
+
+.leader-profile-image img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: top;
+  display: block;
 }
 
 .leader-profile-card h2 {
@@ -174,6 +192,51 @@
   color: #b0bec5;
   margin: 0;
   font-size: 0.9rem;
+}
+
+.developers-section {
+  text-align: center;
+  padding: 3rem 2rem 0;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.developers-title {
+  font-size: clamp(2rem, 5vw, 3rem);
+  background: linear-gradient(135deg, #FFD700, #FFA500);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin: 0 0 1rem 0;
+  font-weight: 700;
+  letter-spacing: -1px;
+}
+
+.developers-section .leaders-container {
+  margin-top: 2rem;
+}
+
+/* Executives Section */
+.executives-section {
+  text-align: center;
+  padding: 3rem 2rem 0;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.executives-title {
+  font-size: clamp(2rem, 5vw, 3rem);
+  background: linear-gradient(135deg, #FFD700, #FFA500);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin: 0 0 1rem 0;
+  font-weight: 700;
+  letter-spacing: -1px;
+}
+
+.executives-section .leaders-container {
+  margin-top: 2rem;
 }
 
 @media (max-width: 768px) {

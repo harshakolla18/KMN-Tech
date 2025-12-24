@@ -45,7 +45,7 @@ function Header({ onMenuClick, onLoginClick }) {
           <Link to="/services" className={`header-nav-item ${location.pathname === '/services' ? 'active' : ''}`} onClick={scrollToTop}>Our Services</Link>
           <Link to="/projects" className={`header-nav-item ${location.pathname === '/projects' ? 'active' : ''}`} onClick={scrollToTop}>Projects</Link>
           <Link to="/leadership" className={`header-nav-item ${location.pathname === '/leadership' ? 'active' : ''}`} onClick={scrollToTop}>Leadership</Link>
-          <Link to="/contact" className={`header-nav-item ${location.pathname === '/contact' ? 'active' : ''}`} onClick={scrollToTop}>Contact</Link>
+          <Link to="/contact" className={`header-nav-item ${location.pathname === '/contact' ? 'active' : ''}`} onClick={scrollToTop}>Contact Us</Link>
           <a href="https://form.jotform.com/253540474507053" target="_blank" rel="noopener noreferrer" className="header-nav-item request-demo-btn">Request Demo</a>
         </nav>
 

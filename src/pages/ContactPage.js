@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { db } from '../firebase/config';
+import { collection, addDoc } from 'firebase/firestore';
 import { motion } from 'framer-motion';
 import './ContactPage.css';
 
@@ -19,15 +21,23 @@ function ContactPage() {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Here you would typically send the form data to a server
-    console.log('Form submitted:', formData);
-    setSubmitted(true);
-    setTimeout(() => {
+    try {
+      await addDoc(collection(db, 'contacts'), {
+        name: formData.name,
+        email: formData.email,
+        message: formData.message,
+        timestamp: new Date()
+      });
+      setSubmitted(true);
       setFormData({ name: '', email: '', message: '' });
-      setSubmitted(false);
-    }, 3000);
+      setTimeout(() => {
+        setSubmitted(false);
+      }, 3000);
+    } catch (error) {
+      alert('Error sending message. Please try again.');
+    }
   };
 
   return (
