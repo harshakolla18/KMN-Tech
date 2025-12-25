@@ -1,4 +1,5 @@
 import React from 'react';
+import CustomFooter from '../components/CustomFooter';
 import { motion } from 'framer-motion';
 import { Globe, Bot, Users } from 'lucide-react';
 import './ServicesPage.css';
@@ -50,6 +51,7 @@ function ServicesPage() {
   ];
 
   return (
+    <>
     <div className="services-page">
       <motion.div
         className="services-header"
@@ -108,6 +110,8 @@ function ServicesPage() {
         ))}
       </div>
     </div>
+    <CustomFooter />
+    </>
   );
 }
 

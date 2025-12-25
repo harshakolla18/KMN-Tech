@@ -1,4 +1,5 @@
 import React from 'react';
+import CustomFooter from '../components/CustomFooter';
 import { motion } from 'framer-motion';
 import './LeadershipPage.css';
 import harshakollaJpeg from '../images/harshakolla.jpeg';
@@ -47,6 +48,7 @@ function LeadershipPage() {
   const developers = leaders.filter(l => l.role.toLowerCase().includes('developer') || l.name === 'Uday Bhanu' || l.name === 'Omkar Naidu');
 
   return (
+    <>
     <div className="leadership-page">
       <motion.div
         className="leadership-header"
@@ -279,12 +281,9 @@ function LeadershipPage() {
         </div>
       </motion.section>
 
-      <footer className="footer">
-        <div className="footer-content">
-          <p>&copy; 2026 Neos Tech. All rights reserved.</p>
-        </div>
-      </footer>
     </div>
+    <CustomFooter />
+    </>
   );
 }
 

@@ -1,4 +1,5 @@
 import React from 'react';
+import CustomFooter from '../components/CustomFooter';
 import { motion } from 'framer-motion';
 import './ProjectsPage.css';
 
@@ -49,6 +50,7 @@ function ProjectsPage() {
   ];
 
   return (
+    <>
     <div className="projects-page">
       <motion.div
         className="projects-header"
@@ -125,12 +127,9 @@ function ProjectsPage() {
         </div>
       </motion.section>
 
-      <footer className="footer">
-        <div className="footer-content">
-          <p>&copy; 2026 Neos Tech. All rights reserved.</p>
-        </div>
-      </footer>
     </div>
+    <CustomFooter />
+    </>
   );
 }
 
