@@ -2,8 +2,10 @@ import React, { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { db } from '../firebase/config';
 import { collection, addDoc } from 'firebase/firestore';
+
 import { motion } from 'framer-motion';
 import './ContactPage.css';
+import CustomFooter from '../components/CustomFooter';
 
 function ContactPage() {
   const [formData, setFormData] = useState({
@@ -208,11 +210,7 @@ function ContactPage() {
         </div>
       </motion.section>
 
-      <footer className="footer">
-        <div className="footer-content">
-          <p>&copy; 2026 Neos Tech. All rights reserved.</p>
-        </div>
-      </footer>
+      <CustomFooter />
     </div>
     </>
   );
